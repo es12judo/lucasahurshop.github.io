@@ -1,5 +1,5 @@
-// Set this to the deployed Cloudflare Worker URL before enabling paid checkout.
-const COURSE_API_URL = "https://YOUR-WORKER.workers.dev";
+// Cloudflare Worker API for Lucasahur Shop course checkout.
+const COURSE_API_URL = "https://silent-hill-8e02.enzosundberg12.workers.dev";
 
 document.querySelectorAll("[data-course-buy]").forEach((button) => {
   button.addEventListener("click", async () => {
@@ -8,9 +8,6 @@ document.querySelectorAll("[data-course-buy]").forEach((button) => {
     button.disabled = true;
     button.textContent = "Opening secure checkout…";
     try {
-      if (COURSE_API_URL.includes("YOUR-WORKER")) {
-        throw new Error("Checkout is not connected yet. Please check back soon.");
-      }
       const response = await fetch(COURSE_API_URL + "/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
