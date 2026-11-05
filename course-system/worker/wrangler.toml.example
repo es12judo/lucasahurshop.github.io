@@ -15,3 +15,5 @@ EMAIL_FROM = "Lucasahur Shop <courses@YOUR_VERIFIED_DOMAIN>"
 # Set these non-secret Stripe Price IDs after creating products in Stripe:
 PRICE_WEB_FOUNDATIONS = "price_REPLACE_ME"
 PRICE_FIRST_BUSINESS = "price_REPLACE_ME"
+COURSE_WEB_FOUNDATIONS_ENABLED = "false"
+COURSE_FIRST_BUSINESS_ENABLED = "false"
