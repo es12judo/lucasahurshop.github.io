@@ -28,3 +28,8 @@ The enquiry form opens the visitor's email application with a pre-filled message
 ## Editing content
 
 Edit the text in `index.html`. For bilingual text, keep both `data-en` and `data-sv` attributes. Edit colours and layout in `styles.css`.
+
+
+## Paid course system
+
+A starter implementation for Stripe Checkout, Cloudflare Workers + D1, Resend email delivery and a token-protected course portal is in [`course-system/README.md`](course-system/README.md). It is not live yet: create the Cloudflare/Stripe/Resend accounts, configure secrets and prices, add real lessons, and complete test-mode purchases before enabling sales.
