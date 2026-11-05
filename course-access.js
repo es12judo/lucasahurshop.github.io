@@ -1,5 +1,5 @@
-// Set this to the same deployed Cloudflare Worker URL as course-system.js.
-const COURSE_ACCESS_API = "https://YOUR-WORKER.workers.dev";
+// Cloudflare Worker API for Lucasahur Shop course access.
+const COURSE_ACCESS_API = "https://silent-hill-8e02.enzosundberg12.workers.dev";
 (async function loadCourse() {
   const title = document.getElementById("course-title");
   const intro = document.getElementById("intro");
@@ -11,7 +11,6 @@ const COURSE_ACCESS_API = "https://YOUR-WORKER.workers.dev";
     return;
   }
   try {
-    if (COURSE_ACCESS_API.includes("YOUR-WORKER")) throw new Error("The course portal is not connected yet.");
     const response = await fetch(COURSE_ACCESS_API + "/api/course?token=" + encodeURIComponent(token));
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "We couldn't verify this access link.");
@@ -38,7 +37,10 @@ const COURSE_ACCESS_API = "https://YOUR-WORKER.workers.dev";
     title.textContent = "We couldn't open your course";
     intro.textContent = error.message;
     const help = document.createElement("p");
-    help.innerHTML = 'If you have paid, contact <a href="mailto:enzosundberg12@gmail.com">support</a> and include your purchase email.';
+    const link = document.createElement("a");
+    link.href = "mailto:enzosundberg12@gmail.com";
+    link.textContent = "support";
+    help.append("If you have paid, contact ", link, " and include your purchase email.");
     content.appendChild(help);
   }
 })();
