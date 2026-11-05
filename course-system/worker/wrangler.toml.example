@@ -1,0 +1,17 @@
+name = "lucasahur-course-api"
+main = "src/index.js"
+compatibility_date = "2026-11-05"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lucasahur-courses"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[vars]
+SITE_URL = "https://es12judo.github.io/lucasahurshop.github.io"
+SITE_ORIGIN = "https://es12judo.github.io"
+EMAIL_FROM = "Lucasahur Shop <courses@YOUR_VERIFIED_DOMAIN>"
+# Set these non-secret Stripe Price IDs after creating products in Stripe:
+PRICE_WEB_FOUNDATIONS = "price_REPLACE_ME"
+PRICE_FIRST_BUSINESS = "price_REPLACE_ME"
