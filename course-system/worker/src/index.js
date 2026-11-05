@@ -61,6 +61,8 @@ async function createCheckout(request, env) {
   const slug = body?.course;
   const course = CATALOG[slug];
   if (!course) return json({ error: "That course is not available for purchase." }, 400);
+  const enabledKey = slug === "web-foundations" ? "COURSE_WEB_FOUNDATIONS_ENABLED" : "COURSE_FIRST_BUSINESS_ENABLED";
+  if (env[enabledKey] !== "true") return json({ error: "This course is not open for purchase yet." }, 503);
   const priceId = env[course.priceEnv];
   if (!priceId) return json({ error: "This course is not configured for checkout yet." }, 503);
 
