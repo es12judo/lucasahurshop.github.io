@@ -62,7 +62,11 @@ Add secrets using Wrangler (never commit them):
 
 ## Connect the website
 
-After deploying the Worker, set `COURSE_API_URL` at the top of `course-system/site/course-system.js` to your Worker URL, for example `https://lucasahur-course-api.YOUR-SUBDOMAIN.workers.dev`. Copy the two files in `course-system/site` to the root of the GitHub Pages repository as directed in the main README.
+After deploying the Worker, set `COURSE_API_URL` at the top of the root-level `course-system.js` and `COURSE_ACCESS_API` at the top of the root-level `course-access.js` to your Worker URL, for example `https://lucasahur-course-api.YOUR-SUBDOMAIN.workers.dev`. The course portal files have already been copied to the repository root.
+
+## Enable sales only when ready
+
+Checkout is intentionally disabled by default. Keep `COURSE_WEB_FOUNDATIONS_ENABLED` and `COURSE_FIRST_BUSINESS_ENABLED` set to `false` until the course has complete lessons, you have tested the purchase and email flow in Stripe test mode, and the appropriate adult account representative has approved going live. Change the relevant value to `true` only when ready.
 
 ## Add lessons
 
